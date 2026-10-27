@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #164E59;
+  background: #F3FAFB;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+  background: #0B151C;
+  color: #E2F3F5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #bcebef; color: #164E59; }
+
+.grid-bg {
+  background-color: #F3FAFB;
+  background-image: linear-gradient(rgba(23,175,192,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23,175,192,.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .grid-bg {
+  background-color: #0E1C24;
+  background-image: linear-gradient(rgba(23,175,192,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(23,175,192,.07) 1px, transparent 1px);
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-borderSoft bg-white shadow-soft transition-colors duration-200; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-aqua px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal focus:outline-none focus:ring-2 focus:ring-aqua focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-borderSoft bg-white px-4 py-2.5 text-sm font-semibold text-teal transition hover:bg-pale; }
+  .field { @apply w-full rounded-xl border border-borderSoft bg-white px-3 py-2.5 text-sm text-teal outline-none transition placeholder:text-slate-400 focus:border-aqua focus:ring-2 focus:ring-cyan-100; }
+  .nav-item { @apply flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm text-slate-600 transition hover:bg-pale hover:text-teal; }
+  .nav-item.active { @apply bg-cyan-50 font-semibold text-teal; }
+  .nav-item.active svg { color: #17AFC0; }
+}
+
+/* Dark mode comprehensive overrides */
+.dark .card {
+  background-color: #12212B;
+  border-color: #1E3646;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dark .btn-secondary {
+  background-color: #162935;
+  border-color: #1E3646;
+  color: #E2F3F5;
+}
+.dark .btn-secondary:hover {
+  background-color: #1D3646;
+}
+
+.dark .field {
+  background-color: #0C1820;
+  border-color: #1E3646;
+  color: #E2F3F5;
+}
+.dark .field::placeholder {
+  color: #64748B;
+}
+
+.dark .nav-item {
+  color: #94A3B8;
+}
+.dark .nav-item:hover {
+  background-color: #162935;
+  color: #38BDF8;
+}
+.dark .nav-item.active {
+  background-color: rgba(23, 175, 192, 0.15);
+  color: #38BDF8;
+}
+.dark .nav-item.active svg {
+  color: #38BDF8;
+}
+
+.dark aside {
+  background-color: #0E1C24 !important;
+  border-color: #1E3646 !important;
+}
+
+.dark header {
+  background-color: rgba(14, 28, 36, 0.95) !important;
+  border-color: #1E3646 !important;
+}
+
+.dark .border-borderSoft {
+  border-color: #1E3646 !important;
+}
+
+.dark .border-cyan-100 {
+  border-color: rgba(23, 175, 192, 0.25) !important;
+}
+
+.dark .text-teal {
+  color: #E2F3F5 !important;
+}
+
+.dark .text-slate-600 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-slate-500 {
+  color: #94A3B8 !important;
+}
+
+.dark .text-slate-400 {
+  color: #64748B !important;
+}
+
+.dark .bg-pale {
+  background-color: #0E1C24 !important;
+}
+
+.dark .bg-cyan-50 {
+  background-color: rgba(23, 175, 192, 0.15) !important;
+  color: #38BDF8 !important;
+}
+
+.dark .ring-cyan-100 {
+  --tw-ring-color: rgba(23, 175, 192, 0.3) !important;
+}
+
+.dark .bg-white {
+  background-color: #12212B !important;
+}
+
+.dark .bg-white\/90,
+.dark .bg-white\/95 {
+  background-color: rgba(18, 33, 43, 0.95) !important;
+}
+
+.dark .border-slate-50,
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1A3140 !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #1A3140 !important;
+}
+
